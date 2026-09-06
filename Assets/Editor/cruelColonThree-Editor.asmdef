@@ -1,0 +1,10 @@
+{
+  "name": "cruelColonThree-Editor",
+  "references": [
+    "cruelColonThree"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": []
+}
