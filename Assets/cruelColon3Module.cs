@@ -70,8 +70,8 @@ public class cruelColon3Module : MonoBehaviour
 	{
 		getValues();
 		currentPoints = UnityEngine.Random.Range(-99, -39);
-		GetComponent<KMSelectable>().OnFocus += delegate { selected = true; print("sel = true");};
-		GetComponent<KMSelectable>().OnDefocus += delegate { selected = false; print("sel = false");};
+		GetComponent<KMSelectable>().OnFocus += delegate { selected = true;};
+		GetComponent<KMSelectable>().OnDefocus += delegate { selected = false;};
 		colonThreeButton.OnInteract += delegate { HandlePress(); return false; };
 		colonBracketButton.OnInteract += delegate { HandlePress(); return false; };
 		angyColonThreeButton.OnInteract += delegate { HandlePress(); return false; };
@@ -128,8 +128,8 @@ public class cruelColon3Module : MonoBehaviour
 	string getAnswer(int num) // yandere dev simulator
 	{
 		string ans = "";
-		if (num % (A * A) == 0) ans += '<';
-		else if (num % A == 0) ans += '>';
+		if (num % (A * A) == 0) ans += "<";
+		else if (num % A == 0) ans += ">";
 		if (num % 67 == 0)
 		{
 			if (num % (B * B) == 0) ans += "xX";
@@ -155,7 +155,7 @@ public class cruelColon3Module : MonoBehaviour
 	}
 
 	string getReversedAnswer(string str) => str.Any(c => "cC3".Contains(c)) ? "" : 
-		str.Select(c => "><xX;:O({|["["<>xX;:O)}|]".IndexOf(c)]).Aggregate("", (a, b) => a + b);
+		str.Reverse().Select(c => "><xX;:O({|["["<>xX;:O)}|]".IndexOf(c)].ToString()).Aggregate("", (a, b) => a + b);
 	
 	
 	void submit(string str)
